@@ -27,7 +27,7 @@ jobs:
       - name: Build MacOS App
         run: poetry run pyinstaller macos.spec
       - name: Zip MacOS App
-        run: zip -r macos.zip dist/MegaDetector Desktop.app
+        run: zip -r macos.zip "dist/MegaDetector Desktop.app"
       - uses: actions/upload-artifact@v3
         with:
           name: MacOS App
