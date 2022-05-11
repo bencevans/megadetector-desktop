@@ -4,6 +4,9 @@ from camtrapml.dataset import ImageDataset
 from os import walk
 import tensorflow as tf
 
+# Disable GPU
+tf.config.set_visible_devices([], 'GPU')
+
 def enumerate_images(path):
     for root_dir, folders, files in walk(path):
         for file in files:
@@ -24,6 +27,8 @@ class MyApp(tk.Tk):
 
         if dir_path == '':
             return
+
+        self.dir_path = Path(dir_path)
 
         self.button.destroy()
 
@@ -56,12 +61,41 @@ class MyApp(tk.Tk):
         self.process()
 
     def process(self):
+
+        output_images = []
         
         for i, image_path in enumerate(self.image_paths):
             self.status.config(text=f"Running Detection\n\n{i}/{len(self.image_paths)}")
             self.status.update()
-            self.model.detect(image_path)
+
+            detections = self.model.detect(image_path)
+            for detection in detections:
+                detection['conf'] = float(detection['conf'])
+                for coord in detection['bbox']:
+                    coord = float(coord)
+
+            output_images.append({
+                'file': str(image_path.relative_to(self.dir_path)),
+                'detections': detections
+            })
         
+        self.status.config(text="Saving Output")
+        self.status.update()
+
+        from json import dump
+        with open(self.dir_path / 'md.4.1.0.json', 'w') as f:
+            dump(output_images, f)
+        
+        self.status.config(text="Saved Output")
+        self.status.update()
+
+        self.status.config(text="Done")
+        self.status.update()
+
+        from time import sleep
+        sleep(4)
+
+        self.destroy()
 
 
     def __init__(self):
