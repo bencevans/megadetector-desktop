@@ -2,7 +2,11 @@ name: Build for MacOS
 
 on:
   push:
+    branches:
+      - main
   pull_request:
+    branches:
+      - main
 
 permissions:
   contents: read
