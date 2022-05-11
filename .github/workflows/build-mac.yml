@@ -1,0 +1,28 @@
+name: Build for MacOS
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install poetry
+        run: pipx install poetry
+      - uses: actions/setup-python@v3
+        with:
+          python-version: "3.9"
+          cache: "poetry"
+      - run: poetry install
+      - name: Build MacOS App
+        run: poetry run pyinstaller macos.spec
+      - uses: actions/upload-artifact@v3
+        with:
+          name: MacOS App
+          path: dist/MegaDetector Desktop.app
