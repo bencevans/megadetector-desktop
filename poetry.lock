@@ -333,17 +333,6 @@ python-dateutil = ">=2.7"
 setuptools_scm = ">=4"
 
 [[package]]
-name = "modulegraph"
-version = "0.19.2"
-description = "Python module dependency analysis tool"
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-altgraph = ">=0.15"
-
-[[package]]
 name = "numpy"
 version = "1.22.3"
 description = "NumPy is the fundamental package for array computing with Python."
@@ -420,31 +409,6 @@ description = "Protocol Buffers"
 category = "main"
 optional = false
 python-versions = ">=3.7"
-
-[[package]]
-name = "py2app"
-version = "0.28"
-description = "Create standalone Mac OS X applications with Python"
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-altgraph = ">=0.16"
-macholib = ">=1.16"
-modulegraph = ">=0.17"
-
-[[package]]
-name = "py2exe"
-version = "0.11.1.0"
-description = "Build standalone executables for Windows"
-category = "dev"
-optional = false
-python-versions = ">=3.7, <3.11"
-
-[package.dependencies]
-cachetools = "*"
-pefile = "*"
 
 [[package]]
 name = "pyasn1"
@@ -831,7 +795,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.9,<3.11"
-content-hash = "bf41153840758dc9210c055d6e29313d615fc1f491006cae98d75d03337d9962"
+content-hash = "023017b2449b51547cf0d7a7f5ed5dd2148e7ea921533a1c807065d32d207b5a"
 
 [metadata.files]
 absl-py = [
@@ -1095,10 +1059,6 @@ matplotlib = [
     {file = "matplotlib-3.5.2-pp37-pypy37_pp73-win_amd64.whl", hash = "sha256:24173c23d1bcbaed5bf47b8785d27933a1ac26a5d772200a0f3e0e38f471b001"},
     {file = "matplotlib-3.5.2.tar.gz", hash = "sha256:48cf850ce14fa18067f2d9e0d646763681948487a8080ec0af2686468b4607a2"},
 ]
-modulegraph = [
-    {file = "modulegraph-0.19.2-py2.py3-none-any.whl", hash = "sha256:7985a8b3d97307b26e1872949973239b273602a041a3e2caedf80bc640909991"},
-    {file = "modulegraph-0.19.2.tar.gz", hash = "sha256:14c59c10874001aa9c1d527f114870991c0d8dfc6baf6c7e27f885df794a8239"},
-]
 numpy = [
     {file = "numpy-1.22.3-cp310-cp310-macosx_10_14_x86_64.whl", hash = "sha256:92bfa69cfbdf7dfc3040978ad09a48091143cffb778ec3b03fa170c494118d75"},
     {file = "numpy-1.22.3-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:8251ed96f38b47b4295b1ae51631de7ffa8260b5b087808ef09a39a9d66c97ab"},
@@ -1201,21 +1161,6 @@ protobuf = [
     {file = "protobuf-3.20.1-cp39-cp39-win_amd64.whl", hash = "sha256:7e371f10abe57cee5021797126c93479f59fccc9693dafd6bd5633ab67808a91"},
     {file = "protobuf-3.20.1-py2.py3-none-any.whl", hash = "sha256:adfc6cf69c7f8c50fd24c793964eef18f0ac321315439d94945820612849c388"},
     {file = "protobuf-3.20.1.tar.gz", hash = "sha256:adc31566d027f45efe3f44eeb5b1f329da43891634d61c75a5944e9be6dd42c9"},
-]
-py2app = [
-    {file = "py2app-0.28-py2.py3-none-any.whl", hash = "sha256:3e33e576f86c8e6edceba4e541f8a6acebab940829a94b013f360d0cd366e5b7"},
-    {file = "py2app-0.28.tar.gz", hash = "sha256:fcf2794548b144ab895733c0fc06e7224e4074d0d97b9ddddbde8dcf64bee57c"},
-]
-py2exe = [
-    {file = "py2exe-0.11.1.0-cp310-cp310-win32.whl", hash = "sha256:7069b6ebc690f6f1b5ee8514a63f1c3765fa006cefc2e15aa306829b029b03a3"},
-    {file = "py2exe-0.11.1.0-cp310-cp310-win_amd64.whl", hash = "sha256:29707fbe1fe7670d6741cd1905bbf7368f1a5a98fa15524ef23aae2a88e4d465"},
-    {file = "py2exe-0.11.1.0-cp37-cp37m-win32.whl", hash = "sha256:37fb1f7ff73e252bfa21789d8448d3bcf521a0bc1edd2ee3734534a4b437bed0"},
-    {file = "py2exe-0.11.1.0-cp37-cp37m-win_amd64.whl", hash = "sha256:9e29789b3e5a37fc376726062574607c9fe5ef88d0331d311871de4dda406717"},
-    {file = "py2exe-0.11.1.0-cp38-cp38-win32.whl", hash = "sha256:a9d42bc5c6120bda01fbba553215e3dee7d0d2951d6fe30fc7c36176a46ae0a9"},
-    {file = "py2exe-0.11.1.0-cp38-cp38-win_amd64.whl", hash = "sha256:19e5d6803501fb55a30759889446234e275b2e5da21a53ae847e2529dd23eb7b"},
-    {file = "py2exe-0.11.1.0-cp39-cp39-win32.whl", hash = "sha256:a03ba497f6eec4d0d41bd150ea611fb87db302a74a41d6826cb0445fdb418f41"},
-    {file = "py2exe-0.11.1.0-cp39-cp39-win_amd64.whl", hash = "sha256:329bcf5f2feaf99b21c9ef49ec8060cfdcb5671debbab6f53135ae53d491fc4d"},
-    {file = "py2exe-0.11.1.0.tar.gz", hash = "sha256:85f29507dc426202bceec940fdf2fb7d566008406995760f99e8b3e7fe834d6a"},
 ]
 pyasn1 = [
     {file = "pyasn1-0.4.8-py2.4.egg", hash = "sha256:fec3e9d8e36808a28efb59b489e4528c10ad0f480e57dcc32b4de5c9d8c9fdf3"},
