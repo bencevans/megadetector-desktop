@@ -30,11 +30,11 @@ The Application is packaged into a native executable, .exe on Windows and .app o
 
 #### Windows
 
-    python setup_win.py py2exe
+    # TODO
 
 #### MacOS
 
-    python setup_mac.py build
+    poetry run pyinstaller macos.spec
 
 #### Linux
 
