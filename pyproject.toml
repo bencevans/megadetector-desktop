@@ -10,8 +10,6 @@ python = ">=3.9,<3.11"
 camtrapml = "0.2.3"
 
 [tool.poetry.dev-dependencies]
-py2app = "^0.28"
-py2exe = "^0.11.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
