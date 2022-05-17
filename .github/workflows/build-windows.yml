@@ -1,4 +1,4 @@
-name: Build for MacOS
+name: Build for Windows
 
 on:
   push:
@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v3
@@ -23,12 +23,10 @@ jobs:
         with:
           python-version: "3.9"
           cache: "poetry"
-      - run: poetry install
-      - name: Build MacOS App
-        run: poetry run pyinstaller macos.spec
-      - name: Zip MacOS App
-        run: zip -r macos.zip "dist/MegaDetector Desktop.app"
+      - run: poetry config virtualenvs.create false && poetry install
+      - name: Build Windows App
+        run: pyinstaller win.spec
       - uses: actions/upload-artifact@v3
         with:
-          name: MacOS App
-          path: macos.zip
+          name: Windows App
+          path: "dist/MegaDetector Desktop.exe"
