@@ -23,9 +23,9 @@ jobs:
         with:
           python-version: "3.9"
           cache: "poetry"
-      - run: poetry install
+      - run: poetry config virtualenvs.create false && poetry install
       - name: Build MacOS App
-        run: poetry run pyinstaller macos.spec
+        run: pyinstaller macos.spec
       - name: Zip MacOS App
         run: zip -r macos.zip "dist/MegaDetector Desktop.app"
       - uses: actions/upload-artifact@v3
