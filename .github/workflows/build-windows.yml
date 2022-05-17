@@ -23,9 +23,9 @@ jobs:
         with:
           python-version: "3.9"
           cache: "poetry"
-      - run: poetry config virtualenvs.create false && poetry install
+      - run: poetry install
       - name: Build Windows App
-        run: pyinstaller win.spec
+        run: poetry run pyinstaller win.spec
       - uses: actions/upload-artifact@v3
         with:
           name: Windows App
