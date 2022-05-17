@@ -28,7 +28,7 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name='Mega Detector',
+    name='MegaDetector Desktop',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
