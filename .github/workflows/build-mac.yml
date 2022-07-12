@@ -20,6 +20,7 @@ jobs:
       - name: Configuring conda
         uses: conda-incubator/setup-miniconda@v2
         with:
+          mamba-version: "*"
           activate-environment: md-desktop
           environment-file: environment.yml
       - name: Build MacOS App
