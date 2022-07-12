@@ -17,15 +17,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Install poetry
-        run: pipx install poetry
-      - uses: actions/setup-python@v3
+      - name: Configuring conda
+        uses: conda-incubator/setup-miniconda@v2
         with:
-          python-version: "3.9"
-          cache: "poetry"
-      - run: poetry install
+          mamba-version: "*"
+          activate-environment: md-desktop
+          environment-file: environment.yml
       - name: Build Windows App
-        run: poetry run pyinstaller win.spec
+        shell: bash -l {0}
+        run: pyinstaller win.spec
       - uses: actions/upload-artifact@v3
         with:
           name: Windows App
