@@ -19,10 +19,10 @@ jobs:
       - script: pipx install poetry
         displayName: "Install Poetry"
 
-      - script: poetry config settings.virtualenvs.create false
-        displayName: "Disable virtualenv creation"
+      - script: poetry export -f requirements.txt --output requirements.txt
+        displayName: "Export requirements.txt"
 
-      - script: poetry install
+      - script: pip install -r requirements.txt
         displayName: "Install Dependencies"
 
       - script: |
