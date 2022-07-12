@@ -23,6 +23,7 @@ jobs:
           activate-environment: md-desktop
           environment-file: environment.yml
       - name: Build MacOS App
+        shell: bash -l {0}
         run: pyinstaller macos.spec
       - name: Zip MacOS App
         run: zip -r macos.zip "dist/MegaDetector Desktop.app"
