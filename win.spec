@@ -34,6 +34,7 @@ exe = EXE(
     strip=False,
     upx=True,
     upx_exclude=[],
+    icon="icon.png",
     runtime_tmpdir=None,
     console=False,
     disable_windowed_traceback=False,
