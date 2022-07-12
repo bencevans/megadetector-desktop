@@ -45,6 +45,6 @@ exe = EXE(
 app = BUNDLE(
     exe,
     name='MegaDetector Desktop.app',
-    icon=None,
+    icon='icon.png',
     bundle_identifier=None,
 )
