@@ -26,7 +26,7 @@ jobs:
         displayName: "Install Dependencies"
 
       - script: |
-          poetry run pyinstaller -y macos.spec
+          pyinstaller -y macos.spec
         displayName: "Build pyInstaller Application"
       - task: ArchiveFiles@2
         inputs:
