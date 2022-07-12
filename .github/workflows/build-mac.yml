@@ -21,10 +21,10 @@ jobs:
         run: pipx install poetry
       - name: Install Python TK
         run: brew install python-tk
-      - uses: actions/setup-python@v3
-        with:
-          python-version: "3.9"
-          cache: "poetry"
+      # - uses: actions/setup-python@v3
+      #   with:
+      #     python-version: "3.9"
+      #     cache: "poetry"
       - run: poetry install
       - name: Build MacOS App
         run: poetry run pyinstaller macos.spec
