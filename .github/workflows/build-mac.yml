@@ -19,8 +19,11 @@ jobs:
       - name: Configuring conda
         uses: conda-incubator/setup-miniconda@v2
         with:
-          auto-update-conda: true
-          activate-environment: md-desktop
+          python-version: 3.9
+          mamba-version: "*"
+          channels: conda-forge,defaults
+          channel-priority: true
+          activate-environment: anaconda-client-env
           environment-file: environment.yml
       - name: Build MacOS App
         run: pyinstaller macos.spec
