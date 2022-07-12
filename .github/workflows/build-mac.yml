@@ -24,12 +24,8 @@ jobs:
       - name: Configuring conda
         uses: conda-incubator/setup-miniconda@v2
         with:
-          python-version: 3.9
-          mamba-version: "*"
-          channels: conda-forge,defaults
-          channel-priority: true
           activate-environment: md-desktop
-          environment-file: conda_environment.yml
+          environment-file: environment.yml
       - name: Build MacOS App
         run: pyinstaller macos.spec
       - name: Zip MacOS App
