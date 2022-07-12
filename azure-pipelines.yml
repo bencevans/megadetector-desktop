@@ -19,6 +19,9 @@ jobs:
       - script: pipx install poetry
         displayName: "Install Poetry"
 
+      - script: poetry config settings.virtualenvs.create false
+        displayName: "Disable virtualenv creation"
+
       - script: poetry install
         displayName: "Install Dependencies"
 
