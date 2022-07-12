@@ -19,7 +19,7 @@ jobs:
       - script: pipx install poetry
         displayName: "Install Poetry"
 
-      - script: poetry export -f requirements.txt --output requirements.txt
+      - script: poetry export -f requirements.txt --output requirements.txt --without-hashes
         displayName: "Export requirements.txt"
 
       - script: pip install -r requirements.txt
