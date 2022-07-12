@@ -2,10 +2,15 @@ import tkinter as tk
 from pathlib import Path
 from camtrapml.dataset import ImageDataset
 from os import walk
+from platform import system, machine
+from warnings import warn
 import tensorflow as tf
 
-# Disable GPU
-tf.config.set_visible_devices([], 'GPU')
+# Disable the GPU on M1 Macs as there appears to be a bug where the outputs are
+# not the same as the reference implementation.
+if system() == "Darwin" and machine() == "arm64":
+    warn("Disabling GPU on M1 Macs")
+    tf.config.set_visible_devices([], "GPU")
 
 def enumerate_images(path):
     for root_dir, folders, files in walk(path):
