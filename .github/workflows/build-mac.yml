@@ -17,10 +17,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: pwd
-        run: pwd
-      - name: ls
-        run: ls -la
       - name: Configuring conda
         uses: conda-incubator/setup-miniconda@v2
         with:
