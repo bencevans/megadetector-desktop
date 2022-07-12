@@ -16,6 +16,11 @@ jobs:
     runs-on: macos-latest
 
     steps:
+      - uses: actions/checkout@v3
+      - name: pwd
+        run: pwd
+      - name: ls
+        run: ls -la
       - name: Configuring conda
         uses: conda-incubator/setup-miniconda@v2
         with:
@@ -23,8 +28,8 @@ jobs:
           mamba-version: "*"
           channels: conda-forge,defaults
           channel-priority: true
-          activate-environment: anaconda-client-env
-          environment-file: environment.yml
+          activate-environment: md-desktop
+          environment-file: conda_environment.yml
       - name: Build MacOS App
         run: pyinstaller macos.spec
       - name: Zip MacOS App
