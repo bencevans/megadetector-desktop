@@ -16,14 +16,14 @@ jobs:
           versionSpec: "3.9"
           architecture: "x64"
 
-      - script: python -m pip install --upgrade pip
-        displayName: "Upgrade Pip"
+      - script: pipx install poetry
+        displayName: "Install Poetry"
 
-      - script: python -m pip install .
-        displayName: "Install Deps"
+      - script: poetry install
+        displayName: "Install Dependencies"
 
       - script: |
-          pyinstaller -y macos.spec
+          poetry run pyinstaller -y macos.spec
         displayName: "Build pyInstaller Application"
 
       - task: ArchiveFiles@2
@@ -46,14 +46,14 @@ jobs:
           versionSpec: "3.9"
           architecture: "x64"
 
-      - script: python -m pip install --upgrade pip
-        displayName: "Upgrade Pip"
+      - script: pipx install poetry
+        displayName: "Install Poetry"
 
-      - script: python -m pip install .
-        displayName: "Install Deps"
+      - script: poetry install
+        displayName: "Install Dependencies"
 
       - script: |
-          pyinstaller -y macos.spec
+          poetry run pyinstaller -y macos.spec
         displayName: "Build pyInstaller Application"
 
       - task: ArchiveFiles@2
