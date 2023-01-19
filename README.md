@@ -1,3 +1,6 @@
+<p align="center">:warning: The MegaDetector Desktop Project has been superseded by the <a href="https://github.com/bencevans/camtrap-detector#readme">CamTrap Detector</a> project. :warning:</p>
+
+
 # MegaDetector Desktop
 
 > Warning: MegaDetector Desktop is currently considered alpha software. Expect bugs and crashes, and please report them on the [GitHub repository](https://github.com/bencevans/megadetector-desktop). For a more stable CLI utility, see the [Microsoft/CameraTraps MegaDetector Scripts](https://github.com/microsoft/CameraTraps/blob/main/megadetector.md#using-the-model).
